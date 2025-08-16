@@ -1,0 +1,23 @@
+# nixpacks.toml
+providers = ["python"]
+
+[variables]
+PORT = "8000"
+
+[phases.setup]
+# Ensure Python + pip are in the Nix profile
+nixPkgs = ["python311", "python311Packages.pip", "curl", "wget", "gcc"]
+
+[phases.install]
+# Use the Nix-installed pip (avoid "python -m pip" issues)
+cmds = [
+  "~/.nix-profile/bin/pip3 --version",
+  "~/.nix-profile/bin/pip3 install --upgrade pip",
+  "~/.nix-profile/bin/pip3 install -r requirements.txt"
+]
+
+[start]
+# Change app:app if your module/variable differ (e.g., main:app)
+cmd = "uvicorn app:app --host 0.0.0.0 --port $PORT"
+
+
