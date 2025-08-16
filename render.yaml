@@ -1,0 +1,26 @@
+# render.yaml
+services:
+  - type: web
+    name: data-analyst-agent
+    runtime: python
+    plan: free
+    region: oregon
+    buildCommand: |
+      pip install --upgrade pip
+      pip install -r requirements.txt
+      # Try to fetch browser binaries; ignore failure on native runtime
+      python -m playwright install chromium || true
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT --workers 1 --log-level warning
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: gemini_api
+        sync: false
+      - key: gemini_api_2
+        sync: false
+      - key: API_KEY
+        sync: false
+      - key: horizon_api
+        sync: false
+      - key: OCR_API_KEY
+        sync: false
