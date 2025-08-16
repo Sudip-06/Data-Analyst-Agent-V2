@@ -1061,9 +1061,8 @@ async def root():
     }
 
 @app.get("/health")
-async def health_check():
-    """Alternative health check endpoint"""
-    return {"status": "ok", "timestamp": "2024-01-01T00:00:00Z"}
+def health():
+    return {"status": "ok"}
 
 @app.post("/aianalyst/")
 async def aianalyst(request: Request):
