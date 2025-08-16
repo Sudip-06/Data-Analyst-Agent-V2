@@ -8,18 +8,16 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 
 WORKDIR /app
 
-# System deps for building wheels (clean and small)
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential curl wget && \
     rm -rf /var/lib/apt/lists/*
 
-# Install deps first for better caching
 COPY requirements.txt .
 RUN --mount=type=cache,target=/root/.cache/pip \
     pip install -r requirements.txt
 
-# Then copy the app
 COPY . .
 
 EXPOSE 8000
 CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "${PORT}", "--workers", "1"]
+
