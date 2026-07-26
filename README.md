@@ -2,6 +2,8 @@
 
 A powerful FastAPI application for data analysis with multiple LLM integrations, web scraping capabilities, and OCR functionality.
 
+## Project Statement : https://tds.s-anand.net/project-data-analyst-agent/
+
 ## Features
 
 - **Multiple LLM Support**: Gemini 2.0 Flash, Gemini 2.5 Pro, GPT-4o Mini, Horizon Beta
