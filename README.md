@@ -399,22 +399,7 @@ structural things most likely to zero out an otherwise-correct answer.
 | Works with 1 request, fails with 3 concurrent | Single-worker blocking execution | See "Known limitations" in README |
 | Image byte size over 100,000 | matplotlib default DPI/figure size too large | Lower `dpi=` and/or `figsize=` in the generated plotting code, or ask for a tighter prompt in `unified_code_instructions.txt` |
 
-## 9. Pre-submission checklist
 
-- [ ] `LICENSE` file present and MIT (already ✅ in this repo)
-- [ ] GitHub repo is **public**
-- [ ] Repo is **unique** (not a fork/duplicate flagged by the grader)
-- [ ] Deployed endpoint URL is the full path: `https://.../aianalyst/`
-  (not just the base domain)
-- [ ] `/health` responds `200 OK`
-- [ ] A full end-to-end test (Section 3) completes **within 5 minutes**
-  against the *deployed* URL, not just localhost
-- [ ] Ran the concurrency test (Section 5) and confirmed 3 simultaneous
-  requests all finish inside the time budget
-- [ ] All required env vars are set on the deployed service (not just
-  locally in `.env`)
-- [ ] Sent a warm-up request shortly before the grading window if on a
-  free/spin-down tier
 
 ## License
 
