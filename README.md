@@ -147,7 +147,7 @@ This app is configured for Railway deployment:
 ## API Endpoints
 
 - `GET /`: Health check
-- `POST /analyze`: Main data analysis endpoint
+- `POST /aianalyst`: Main data analysis endpoint
 - `POST /upload`: File upload and processing
 - `GET /docs`: Interactive API documentation
 
