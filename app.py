@@ -351,7 +351,7 @@ async def ping_gemini_pro(question_text, relevant_context="", max_tries=3):
                 ]
             }
             async with httpx.AsyncClient(timeout=120) as client:
-                response = await client.post("https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent", headers=headers, json=payload)
+                response = await client.post("https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent", headers=headers, json=payload)
                 print(response)
                 
                 # Check if response is successful
