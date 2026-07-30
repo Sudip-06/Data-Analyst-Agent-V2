@@ -11,7 +11,7 @@ assignment.
 > a serverless function. It depends on a headless Chromium browser (Playwright)
 > and a JRE (tabula-py), and requests can legitimately run for minutes at a
 > time — none of which serverless platforms like Vercel support. **Render**
-> and **Railway** are the supported targets; see [Deployment](#deployment)
+> and **Railway** are the supported targets; see [Deployment](https://data-analyst-agent-v2.onrender.com/aianalyst/)
 > below.
 
 ## How it works
